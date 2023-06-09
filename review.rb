@@ -94,3 +94,14 @@ class User
       puts "Review for #{product.name} by #{user.name}: #{star_rating}. #{comment}"
     end
   end
+
+user1 = User.new("John")
+user2 = User.new("Jane")
+
+product1 = Product.new("Product 1")
+product2 = Product.new("Product 2")
+
+product1.leave_review(user1, 4, "Great product!")
+product1.leave_review(user2, 5, "Excellent!")
+
+product2.leave_review(user1, 3, "Okay")

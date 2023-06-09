@@ -78,3 +78,19 @@ class User
       total_reviews > 0 ? (total_ratings.to_f / total_reviews) : 0
     end
   end
+
+  class Review
+    attr_reader :user, :star_rating, :comment
+    attr_accessor :product
+  
+    def initialize(user, product, star_rating, comment)
+      @user = user
+      @product = product
+      @star_rating = star_rating
+      @comment = comment
+    end
+  
+    def print_review
+      puts "Review for #{product.name} by #{user.name}: #{star_rating}. #{comment}"
+    end
+  end
